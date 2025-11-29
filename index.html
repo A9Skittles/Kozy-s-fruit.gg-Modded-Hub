@@ -27,12 +27,12 @@
             border-radius: 10px;
             background: linear-gradient(to right, red, green);
             color: white;
-            font-size: 20px;
             text-decoration: none;
+            font-size: 20px;
         }
 
         .apk-box {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.3);
             padding: 20px;
             width: 200px;
             margin: 20px auto;
@@ -50,73 +50,103 @@
 
         .apk-card {
             background: white;
-            width: 300px;
-            border-radius: 20px;
-            padding: 20px;
             color: black;
+            width: 300px;
+            padding: 20px;
+            border-radius: 20px;
         }
 
         .apk-inner {
             background: black;
-            color: white;
             padding: 20px;
             border-radius: 15px;
+            color: white;
             position: relative;
         }
 
+        
         .status-dot {
+            position: absolute;
+            top: 10px;
+            right: 10px;
             width: 15px;
             height: 15px;
             border-radius: 50%;
-            position: absolute;
-            right: 10px;
-            top: 10px;
         }
 
-        .status-red { background: red; }
+        .status-green {
+            background: #00ff66;
+            box-shadow: 0 0 10px #00ff66;
+        }
+
+        .status-red {
+            background: #ff4444;
+            box-shadow: 0 0 10px #ff4444;
+        }
+	.status-orange {
+            background: #ff9900;
+            box-shadow: 0 0 10px #ff9900;
+        }
+	.status-blue {
+            background: #448aff;
+            box-shadow: 0 0 10px #448aff;
+        }
+	.status-purple {
+            background: #b366ff;
+            box-shadow: 0 0 10px #b366ff;
+	}
+	.status-yellow {
+    	    background: #ffee00;
+            box-shadow: 0 0 10px #ffee00;
+        }
 
         .apk-inner a {
-            color: #7bc9ff;
+            color: #9bd5ff;
+            text-decoration: underline;
         }
 
-        .apk-meta a {
-            color: blue;
+        .status-red {
+            background: red;
+            box-shadow: 0 0 10px red;
         }
 
         .backbtn {
             position: absolute;
             left: 15px;
             top: 15px;
-            padding: 8px 12px;
+            padding: 10px 15px;
             background: rgba(255,255,255,0.2);
             border-radius: 10px;
             cursor: pointer;
+        }
+
+        .apk-inner a {
+            color: #9bd5ff;
+        }
+        .apk-meta a {
+            color: #448aff;
         }
     </style>
 </head>
 
 <body>
 
-<!-- HOME PAGE -->
 <div id="home" class="page active">
     <h1>Kozy's Modding Hub</h1>
     <p>Welcome To Kozy's Modding Website!</p>
 
-    <a class="button" href="https://discord.gg/pCKcHwuNdp" target="_blank">
-        ❄ Join The Discord!
-    </a>
+    <a class="button" href="https://discord.gg/pCKcHwuNdp" target="_blank">Our Links!</a>
 
     <div class="apk-box" onclick="showPage('apks')">
         <h2>📱 APK's</h2>
     </div>
 </div>
 
-<!-- APK PAGE-->
 <div id="apks" class="page">
     <div class="backbtn" onclick="showPage('home')">⬅ Back</div>
 
-    <h1>Modded Apks</h1>
-    <p>We will upload Modded apks here</p>
+    <h1>Modded APKs</h1>
+    <p>We will upload Modded APKs here</p>
 
     <div class="apk-grid">
 
@@ -124,11 +154,11 @@
             <div class="apk-inner">
                 <div class="status-dot status-green"></div>
                 <h2>PIRATE TAG</h2>
-                <a href="https://gofile.io/d/zUNiXt">Click to download the Modded Apk</a>
+                <a href="https://gofile.io/d/zUNiXt">Download APK</a>
             </div>
             <div class="apk-meta">
                 Normal Game:
-                <a href="https://tkmbear.itch.io/pirate-tag">Visit Normal Game</a>
+                <a href="https://tkmbear.itch.io/pirate-tag">Visit on Meta</a>
             </div>
         </div>
 
@@ -136,11 +166,11 @@
             <div class="apk-inner">
                 <div class="status-dot status-red"></div>
                 <h2>Klex Taggers</h2>
-                <a href="#">Click to download the Modded Apk</a>
+                <a href="#">Download APK</a>
             </div>
             <div class="apk-meta">
                 Normal Game:
-                <a href="#">Visit Normal Game</a>
+                <a href="#">Visit on Meta</a>
             </div>
         </div>
 
@@ -148,11 +178,11 @@
             <div class="apk-inner">
                 <div class="status-dot status-red"></div>
                 <h2>Project Pooks</h2>
-                <a href="#">Click to download the Modded Apk</a>
+                <a href="#">Download APK</a>
             </div>
             <div class="apk-meta">
                 Normal Game:
-                <a href="#">Visit Normal Game</a>
+                <a href="#">Visit on Meta</a>
             </div>
         </div>
 
@@ -160,10 +190,10 @@
 </div>
 
 <script>
-function showPage(page) {
+function showPage(p) {
     document.getElementById("home").classList.remove("active");
     document.getElementById("apks").classList.remove("active");
-    document.getElementById(page).classList.add("active");
+    document.getElementById(p).classList.add("active");
 }
 </script>
 
