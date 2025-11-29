@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kozy's Modding Hub</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            text-align: center;
+            background: black;
+            color: white;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            margin: 20px;
+            border-radius: 10px;
+            background: linear-gradient(to right, red, green);
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .apk-box {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            width: 200px;
+            margin: 20px auto;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .apk-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .apk-card {
+            background: white;
+            width: 300px;
+            border-radius: 20px;
+            padding: 20px;
+            color: black;
+        }
+
+        .apk-inner {
+            background: black;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .status-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        .status-red { background: red; }
+
+        .apk-inner a {
+            color: #7bc9ff;
+        }
+
+        .apk-meta a {
+            color: blue;
+        }
+
+        .backbtn {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+    <h1>Kozy's Modding Hub</h1>
+    <p>Welcome To Kozy's Modding Website!</p>
+
+    <a class="button" href="https://discord.gg/pCKcHwuNdp" target="_blank">
+        ❄ Join The Discord!
+    </a>
+
+    <div class="apk-box" onclick="showPage('apks')">
+        <h2>📱 APK's</h2>
+    </div>
+</div>
+
+<!-- APK PAGE-->
+<div id="apks" class="page">
+    <div class="backbtn" onclick="showPage('home')">⬅ Back</div>
+
+    <h1>Modded Apks</h1>
+    <p>We will upload Modded apks here</p>
+
+    <div class="apk-grid">
+
+        <div class="apk-card">
+            <div class="apk-inner">
+                <div class="status-dot status-red"></div>
+                <h2>PIRATE TAG</h2>
+                <a href="https://gofile.io/d/zUNiXt">Click to download the Modded Apk</a>
+            </div>
+            <div class="apk-meta">
+                Normal Game:
+                <a href="https://tkmbear.itch.io/pirate-tag">Visit Normal Game</a>
+            </div>
+        </div>
+
+        <div class="apk-card">
+            <div class="apk-inner">
+                <div class="status-dot status-red"></div>
+                <h2>Klex Taggers</h2>
+                <a href="#">Click to download the Modded Apk</a>
+            </div>
+            <div class="apk-meta">
+                Normal Game:
+                <a href="#">Visit Normal Game</a>
+            </div>
+        </div>
+
+        <div class="apk-card">
+            <div class="apk-inner">
+                <div class="status-dot status-red"></div>
+                <h2>Project Pooks</h2>
+                <a href="#">Click to download the Modded Apk</a>
+            </div>
+            <div class="apk-meta">
+                Normal Game:
+                <a href="#">Visit Normal Game</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function showPage(page) {
+    document.getElementById("home").classList.remove("active");
+    document.getElementById("apks").classList.remove("active");
+    document.getElementById(page).classList.add("active");
+}
+</script>
+
+</body>
+</html>
