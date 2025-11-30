@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Kozy's Modding Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
         body {
@@ -29,6 +30,7 @@
             color: white;
             text-decoration: none;
             font-size: 20px;
+            cursor: pointer;
         }
 
         .apk-box {
@@ -93,17 +95,12 @@
             cursor: pointer;
         }
 
-        /* MOBILE FRIENDLY */
+        /* MOBILE FRIENDLY FIX */
         @media (max-width: 600px) {
-            .apk-card {
-                width: 90%;
-            }
-            .button {
-                width: 80%;
-            }
-            .apk-box {
-                width: 80%;
-            }
+            .apk-card { width: 90%; }
+            .button { width: 80%; }
+            .apk-box { width: 80%; }
+            h1 { font-size: 28px; }
         }
     </style>
 </head>
@@ -115,8 +112,8 @@
     <h1>Kozy's Modding Hub</h1>
     <p>Welcome To Kozy's Modding Website!</p>
 
-    <!-- OPEN LINKS PAGE -->
-    <a class="button" href="#" onclick="showPage('links')">Our Links!</a>
+    <!-- FIXED CLICKABLE LINK -->
+    <div class="button" onclick="showPage('links')">Our Links!</div>
 
     <div class="apk-box" onclick="showPage('apks')">
         <h2>📱 APK's</h2>
@@ -129,7 +126,7 @@
     <h1>Our Social Links</h1>
 
     <a class="button" href="https://www.youtube.com/" target="_blank">📺 YouTube</a><br>
-    <a class="button" href="https://discord.gg/frRemRN7uQ" target="_blank">💬 Discord</a><br>
+    <a class="button" href="https://discord.gg/pCKcHwuNdp" target="_blank">💬 Discord</a><br>
     <a class="button" href="https://www.tiktok.com/" target="_blank">🎵 TikTok</a><br>
 </div>
 
