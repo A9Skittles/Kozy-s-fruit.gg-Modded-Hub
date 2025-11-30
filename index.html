@@ -64,7 +64,6 @@
             position: relative;
         }
 
-        
         .status-dot {
             position: absolute;
             top: 10px;
@@ -74,41 +73,15 @@
             border-radius: 50%;
         }
 
-        .status-green {
-            background: #00ff66;
-            box-shadow: 0 0 10px #00ff66;
-        }
+        .status-green { background: #00ff66; box-shadow: 0 0 10px #00ff66; }
+        .status-red { background: #ff4444; box-shadow: 0 0 10px #ff4444; }
+        .status-orange { background: #ff9900; box-shadow: 0 0 10px #ff9900; }
+        .status-blue { background: #448aff; box-shadow: 0 0 10px #448aff; }
+        .status-purple { background: #b366ff; box-shadow: 0 0 10px #b366ff; }
+        .status-yellow { background: #ffee00; box-shadow: 0 0 10px #ffee00; }
 
-        .status-red {
-            background: #ff4444;
-            box-shadow: 0 0 10px #ff4444;
-        }
-	.status-orange {
-            background: #ff9900;
-            box-shadow: 0 0 10px #ff9900;
-        }
-	.status-blue {
-            background: #448aff;
-            box-shadow: 0 0 10px #448aff;
-        }
-	.status-purple {
-            background: #b366ff;
-            box-shadow: 0 0 10px #b366ff;
-	}
-	.status-yellow {
-    	    background: #ffee00;
-            box-shadow: 0 0 10px #ffee00;
-        }
-
-        .apk-inner a {
-            color: #9bd5ff;
-            text-decoration: underline;
-        }
-
-        .status-red {
-            background: red;
-            box-shadow: 0 0 10px red;
-        }
+        .apk-inner a { color: #9bd5ff; text-decoration: underline; }
+        .apk-meta a { color: #448aff; }
 
         .backbtn {
             position: absolute;
@@ -120,28 +93,47 @@
             cursor: pointer;
         }
 
-        .apk-inner a {
-            color: #9bd5ff;
-        }
-        .apk-meta a {
-            color: #448aff;
+        /* MOBILE FRIENDLY */
+        @media (max-width: 600px) {
+            .apk-card {
+                width: 90%;
+            }
+            .button {
+                width: 80%;
+            }
+            .apk-box {
+                width: 80%;
+            }
         }
     </style>
 </head>
 
 <body>
 
+<!-- HOME PAGE -->
 <div id="home" class="page active">
     <h1>Kozy's Modding Hub</h1>
     <p>Welcome To Kozy's Modding Website!</p>
 
-    <a class="button" href="https://discord.gg/pCKcHwuNdp" target="_blank">Our Links!</a>
+    <!-- OPEN LINKS PAGE -->
+    <a class="button" href="#" onclick="showPage('links')">Our Links!</a>
 
     <div class="apk-box" onclick="showPage('apks')">
         <h2>📱 APK's</h2>
     </div>
 </div>
 
+<!-- LINKS PAGE -->
+<div id="links" class="page">
+    <div class="backbtn" onclick="showPage('home')">⬅ Back</div>
+    <h1>Our Social Links</h1>
+
+    <a class="button" href="https://www.youtube.com/" target="_blank">📺 YouTube</a><br>
+    <a class="button" href="https://discord.gg/frRemRN7uQ" target="_blank">💬 Discord</a><br>
+    <a class="button" href="https://www.tiktok.com/" target="_blank">🎵 TikTok</a><br>
+</div>
+
+<!-- APK PAGE -->
 <div id="apks" class="page">
     <div class="backbtn" onclick="showPage('home')">⬅ Back</div>
 
@@ -193,10 +185,10 @@
 function showPage(p) {
     document.getElementById("home").classList.remove("active");
     document.getElementById("apks").classList.remove("active");
+    document.getElementById("links").classList.remove("active");
     document.getElementById(p).classList.add("active");
 }
 </script>
 
 </body>
 </html>
-
